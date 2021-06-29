@@ -20,6 +20,29 @@ namespace Line_Comparison_Problem
                 Console.WriteLine("Length of Line " + i + " is " + lengthLine1);
                 
                 lengthArray[i] = lengthLine1;
+
+               
+            }
+            while (true)
+            {
+
+                //'0' for checking equality of 2 lengths
+                //'1' for comparing 2 lengths
+
+                int option = int.Parse(Console.ReadLine());
+                switch (option)
+                {
+                    case 0:
+                        Program.checkEquality(lengthArray[1].ToString(), lengthArray[2].ToString());
+                        break;
+                    //case 1:
+                    //Program.comparingTheLines(lengthArray[1].ToString(), lengthArray[2].ToString());
+                    //break;
+
+                    default:
+                        break;
+
+                }
             }
         }
             // Fuction to find the length of the lines
@@ -27,7 +50,18 @@ namespace Line_Comparison_Problem
             {
                 double lineLength = Math.Sqrt(Math.Pow(x2 - x1, 2) + Math.Pow(y2 - y1, 2));
                 return lineLength;
+        }
+        public static void checkEquality(string length1, string length2)
+        {
+            if (length1.Equals(length2))
+            {
+                Console.WriteLine("The Lines are at equal length: " + length1);
             }
-        
+            else
+            {
+                Console.WriteLine("The Lines are not at equal length: L1: " + length1 + " L2: " + length2);
+            }
+        }
+
     }
 }
